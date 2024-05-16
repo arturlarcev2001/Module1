@@ -8,5 +8,5 @@ print(my_list)
 my_dict = {'Enfant' : 'Ребенок', 'Garcon' : 'Мальчик', 'Fille' : 'Девочка'}
 print(my_dict)
 print(my_dict['Enfant'])
-my_dict.update(Du_pain = 'Хлеб')
+my_dict['Du_pain'] = 'Хлеб'
 print(my_dict)
