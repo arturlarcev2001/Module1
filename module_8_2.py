@@ -13,7 +13,7 @@ class String(Exception):
 
 def generate_raise(a):
     if isinstance(a, int):
-        raise Integer(f"Использован целий тип аргумента", {"a": a})
+        raise Integer(f"Использован целый тип аргумента", {"a": a})
     elif isinstance(a, str):
         raise String(f"Использован строковый тип аргумента", {"a": a})
     else:
