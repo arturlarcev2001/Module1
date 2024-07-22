@@ -1,0 +1,24 @@
+
+
+def all_variants(text):
+    n = len(text)
+    for i in range(n):
+        for j in range(i+1, n+1):
+            yield text[i:j]
+
+
+
+gen = all_variants('abc')
+for i in gen:
+    print(i)
+
+
+"""
+'123' '1'[0:1] '2'[1:2] '3'[2:3] '12' [0:2] '23' [1:3] '123' [0:3]
+'1'
+'2'
+'3'
+'12'
+'23'
+'123'
+"""
