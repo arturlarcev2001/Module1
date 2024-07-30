@@ -1,32 +1,30 @@
 from threading import Thread, Lock
 
-lock = Lock()
+
 
 class BankAccount:
-
+    lock = Lock()
     def __init__(self):
         self.account = 1000
 
     def deposit(self, amount):
-        self.account += amount
-        print("Deposited {}. New balance is {}".format(amount, self.account))
+        with self.lock:
+            self.account += amount
+            print("Deposited {}. New balance is {}".format(amount, self.account))
 
     def withdraw(self, amount):
-        self.account -= amount
-        print("Withdraw {}. New balance is {}".format(amount, self.account))
+        with self.lock:
+            self.account -= amount
+            print("Withdraw {}. New balance is {}".format(amount, self.account))
 
 
 def deposit_task(account, amount):
   for _ in range(5):
-    lock.acquire()
     account.deposit(amount)
-    lock.release()
 
 def withdraw_task(account, amount):
   for _ in range(5):
-    lock.acquire()
     account.withdraw(amount)
-    lock.release()
 
 def main():
     account = BankAccount()
