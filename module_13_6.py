@@ -9,7 +9,7 @@ import asyncio
 class UserState(StatesGroup):
     age, growth, weight = State(), State(), State()
 
-api = "7211806714:AAH0ThZbanR0XeN-5ICpaACuxd4t-9Hvs_4"
+api = ""
 bot = Bot(token = api)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
