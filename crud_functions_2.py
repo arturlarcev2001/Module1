@@ -16,7 +16,7 @@ def initiate_db():
     balance INT NOT NULL
     );
     """)
-    # --- --- --- --- --- ---
+    # Создаем уникальный ид для каждого нового пользователя
     cursor.execute("""
     CREATE INDEX IF NOT EXISTS user_ids ON Users (user_id)
     """)
